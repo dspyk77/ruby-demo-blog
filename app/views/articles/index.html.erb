@@ -3,14 +3,14 @@
 <ul>
   <% @articles.each do |article| %>
     <li>
-    # The link_to helper renders a link with its first argument as the link's text and
-    # its second argument as the link's destination.
-    # If we pass a model object as the second argument,
-    # link_to will call the appropriate path helper to convert the object to a path.
-    # For example, if we pass an article, link_to will call article_path.
-    # So app/views/articles/index.html.erb becomes:
-    <%= link_to article.title, article %>
+      <%= link_to article.title, article %>
     </li>
   <% end %>
 </ul>
 
+# The link_to helper renders a link with its first argument as the link's text and
+# its second argument as the link's destination.
+# If we pass a model object as the second argument,
+# link_to will call the appropriate path helper to convert the object to a path.
+# For example, if we pass an article, link_to will call article_path.
+# So app/views/articles/index.html.erb becomes:
