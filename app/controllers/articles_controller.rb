@@ -35,12 +35,18 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect_to root_path, status: :see_other
+  end
+
   private
     def article_params
-      params.expect(article: [:title, :body])
+      params.expect(article: [ :title, :body ])
     end
 end
-
 
 # redirect_to will cause the browser to make a new request,
 # whereas render renders the specified view for the current request.
