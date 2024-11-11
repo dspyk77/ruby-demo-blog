@@ -26,19 +26,21 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article.update(article_params)
+    @article = Article.find(params[:id])
 
     if @article.update(article_params)
       redirect_to @article
     else
       render :edit, status: :unprocessable_entity
     end
+  end
 
   private
     def article_params
       params.expect(article: [:title, :body])
     end
 end
+
 
 # redirect_to will cause the browser to make a new request,
 # whereas render renders the specified view for the current request.
